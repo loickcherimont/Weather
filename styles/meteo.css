@@ -1,0 +1,134 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(../styles/static/Nunito-Regular.ttf) format("truetype");
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(../img/clear_weather.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white
+}
+
+.wrapper {
+    min-width: 300px;
+    max-width: 600px;
+    height: 600px;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 2fr 1fr;
+    grid-template-areas:
+    "date date" 
+    "conditions temperature"
+    "location location";
+    gap: 3em;
+    grid-auto-columns: repeat(2, 1fr);
+
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    font-family: Nunito, sans-serif;
+    text-align: center;
+}
+
+.wrapper > * {
+    padding: 1em;
+}
+
+.date {
+    text-align: left;
+    grid-area: date;
+}
+
+.conditions {
+    grid-area: conditions;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.description {
+    font-size: 1.5em;
+}
+
+.conditions .icon {
+    font-size: 8rem;
+    color: gold;
+    padding: 10px;
+}
+
+.temperature {
+    grid-area: temperature;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temperature .icon {
+    margin-right: 0.2em;
+}
+
+.temperature sup {font-size: 0.5em;}
+
+.location {
+    grid-area: location;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-location-arrow {
+    margin-right: 0.5em;
+}
+
+.copyright {
+    font-size: 1.2em;
+}
+
+/* RESPONSIVE DESIGN */
+/* Digital Tablets */
+@media screen and (max-width:610px) {
+    body {
+        background: linear-gradient(to top, #74dbef, #6bcfff, #4bc5ff, #33beff, #27b9ff, #00adff, #0074e4);
+    }
+
+    .wrapper {
+        background: none;
+        
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width:500px) {
+    body { font-size: 80%; }
+
+    .wrapper {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+        "date date"
+        "conditions conditions"
+        "temperature temperature"
+        "location location";
+        gap: .5cm;
+    }
+}
+
