@@ -1,12 +1,22 @@
+/* ---- GENERAL --- */
 *, ::after, ::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 @font-face {
     font-family: Nunito;
     src: url(../styles/static/Nunito-Regular.ttf) format("truetype");
+}
+
+.body-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* flex-basis: 4px; */
+    /* background-color: red; */
 }
 
 body {
@@ -19,15 +29,29 @@ body {
     align-items: center;
     justify-content: space-evenly;
     font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white
+    font-family: Nunito, sans-serif;
+    color: white;
 }
 
+
+/* THE APP */
+
+/* Search bar */
+.body-header-searchbar {
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 14px 16px;
+    align-self: flex-end;
+    font-size: 1em;
+    width: 200px;
+}
+/* Wrapper */
 .wrapper {
     min-width: 300px;
     max-width: 600px;
     height: 600px;
-    padding: 1em;
+    padding: 3em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 2fr 1fr;
@@ -40,19 +64,16 @@ body {
 
     background-color: rgba(255,255,255,0.3);
     border-radius: 20px;
-    font-family: Nunito, sans-serif;
     text-align: center;
 }
 
-.wrapper > * {
-    padding: 1em;
-}
-
+/* Header */
 .date {
     text-align: left;
     grid-area: date;
 }
 
+/* Conditions */
 .conditions {
     grid-area: conditions;
     display: flex;
@@ -65,12 +86,7 @@ body {
     font-size: 1.5em;
 }
 
-/* .conditions .icon {
-    font-size: 8rem;
-    color: gold;
-    padding: 10px;
-} */
-
+/* Temperature */
 .temperature {
     grid-area: temperature;
     font-size: 4em;
@@ -85,6 +101,7 @@ body {
 
 .temperature sup {font-size: 0.5em;}
 
+/* Location */
 .loc {
     grid-area: location;
     font-size: 2em;
@@ -97,11 +114,14 @@ body {
     margin-right: 0.5em;
 }
 
-.copyright {
-    font-size: 1.2em;
+/* FOOTER */
+.footer { 
+    display: flex;
+    justify-content: center;
+    font-size: 1.1em;
+    width: 100%;
 }
-
-/* RESPONSIVE DESIGN */
+/* --- RESPONSIVE DESIGN --- */
 /* Digital Tablets */
 @media screen and (max-width:610px) {
     body {
@@ -110,17 +130,22 @@ body {
     }
 
     .wrapper {
-        /* background: none; */
-        
-        height: 100vh;
+        background-color: transparent;
+        height: 100%;
         width: 100%;
         border-radius: 0;
+        padding: auto;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-bottom: 25px;
     }
 }
 
 /* Smartphones */
 @media screen and (max-width:500px) {
-    body { font-size: 80%; }
+    body { font-size: 90%; }
 
     .wrapper {
         grid-template-rows: repeat(4, 1fr);
@@ -132,4 +157,6 @@ body {
         gap: .5cm;
     }
 }
+
+
 
