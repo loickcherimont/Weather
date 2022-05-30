@@ -7,22 +7,24 @@
     <title>Weather</title>
     <link rel="stylesheet" href="styles/meteo.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/c8ddc93472.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c8ddc93472.js"></script>
 </head>
 <body>
-    <!-- <button id="test">API</button> -->
-    <div class="wrapper" style="background-color:orange;">
+    <header class="body-header">
+        <h1 class="body-header-logo"><img src="img/logo.png" alt="Sun and rain" width="100">Weather</h1>
+        <input type="search" name="searchBar" id="searchBar" class="body-header-searchbar" placeholder="Paris,FR ...">
+    </header>
+    <main class="wrapper">
         <header class="date" id="header"></header>
         <div class="conditions">
-            <!-- <i class="fas fa-sun icon" id="icon"></i> -->
             <p class="icon" id="icon"></p>
             <p class="description" id="condition"></p>
         </div>
         <div class="temperature" id="temperature"></div>
         <div class="loc" id="loc"></div>
-    </div>
-    <footer class="footer" style="background-color: red;">
-        <p class="copyright">&copy; 2022 Loick Cherimont</p>
+    </main>
+    <footer class="footer">
+        <p class="copyright">&copy; 2022 by Loick Cherimont</p>
     </footer>
     <script src="scripts/meteo.js"></script>
 </body>
