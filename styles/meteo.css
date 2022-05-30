@@ -65,11 +65,11 @@ body {
     font-size: 1.5em;
 }
 
-.conditions .icon {
+/* .conditions .icon {
     font-size: 8rem;
     color: gold;
     padding: 10px;
-}
+} */
 
 .temperature {
     grid-area: temperature;
@@ -85,7 +85,7 @@ body {
 
 .temperature sup {font-size: 0.5em;}
 
-.location {
+.loc {
     grid-area: location;
     font-size: 2em;
     display: flex;
@@ -105,11 +105,12 @@ body {
 /* Digital Tablets */
 @media screen and (max-width:610px) {
     body {
+        background-image: none;
         background: linear-gradient(to top, #74dbef, #6bcfff, #4bc5ff, #33beff, #27b9ff, #00adff, #0074e4);
     }
 
     .wrapper {
-        background: none;
+        /* background: none; */
         
         height: 100vh;
         width: 100%;
